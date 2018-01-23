@@ -150,6 +150,18 @@ let myfuncs = require("./bowling");
 
 
 
+{
+	sampleInp9 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,5,5, 5,5,3];
+	sampleParsed9 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[5,5],[5,5,3]];
+
+	test("For given input the score should be 129" , ()=>{
+		expect(myfuncs.score(sampleInp9)).toBe(129);
+	});
+}
+
+
+
+
 
 {
 	wrongInp = [1,2,3,4,5,6];
