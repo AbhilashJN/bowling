@@ -1,6 +1,11 @@
 let myfuncs = require("./bowling");
 
 
+
+
+
+
+
 {
 	sampleInp = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 	sampleParsed = [[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6]];
@@ -141,4 +146,28 @@ let myfuncs = require("./bowling");
 	test("For given input the score should be 133" , ()=>{
 		expect(myfuncs.score(sampleInp8)).toBe(133);
 	});
+}
+
+
+
+
+{
+	wrongInp = [1,2,3,4,5,6];
+	test("given input contains less than 10 elements , should return null", ()=>{
+		expect(myfuncs.score(wrongInp)).toBe(null);
+	});
+
+
+
+}
+
+
+{
+	wrongInp2 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,5,5,10,2,0,1];
+	test("given input contains more than 3 elements in the last frame, should return null", ()=>{
+		expect(myfuncs.score(wrongInp2)).toBe(null);
+	});
+
+
+
 }

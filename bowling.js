@@ -1,19 +1,21 @@
-let frames = [];
 
-/*
-
-function roll(numberOfPins)
-{
-frames.
-
-}
-*/
 
 
 function calcScore(frameArray)
 {
+	if(frameArray.length<10)
+	{
+		return null;
+	}
+
+
 	let score = 0;
 	let modArray = parseFrames(frameArray);
+    
+	if (modArray[9].length>3)
+	{
+		return null;
+	}
 
 
 	for(let i=0;i<modArray.length;i++)
@@ -69,7 +71,7 @@ function parseFrames(frameArray)
 			i=i+1;
 		}
 		frameCount+=1;
-		if (frameCount===9)    //now add the last frame
+		if (frameCount===9)    //now add the last frame which contains all remaining scores i.e. can be 1,2 or 3 throws
 		{
 			modArray.push(frameArray.slice(i+1));
 			break;
