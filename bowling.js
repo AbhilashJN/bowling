@@ -14,15 +14,15 @@ function calcScore(frameArray)
 {
 	let score = 0;
 	let modArray = parseFrames(frameArray);
-	console.log(modArray);
+
 
 	for(let i=0;i<modArray.length;i++)
 	{
-		console.log(i , modArray[i]);
+
         
 		if(modArray[i].length===1) // is a strike
 		{
-			console.log("here1");
+
 			score+=10;
 			score+= calcStrike(modArray,i+1);    //add next two scores
 			
@@ -35,7 +35,7 @@ function calcScore(frameArray)
 				score+=modArray[i+1][0];
 			}
 			else{
-				console.log("here");
+
 				score += (modArray[i][0]+modArray[i][1]);   //is open
 			}
 		}
@@ -45,7 +45,7 @@ function calcScore(frameArray)
                     
 			score += (modArray[i][0]+modArray[i][1]+modArray[i][2]);
 		}
-		console.log(score);
+
 	}
 
 	return score;
@@ -83,13 +83,10 @@ function parseFrames(frameArray)
 
 function calcStrike(parsedArray , begin)
 {
-	console.log(parsedArray,begin);
-	console.log(parsedArray[begin] , parsedArray[begin].length);
+
 	let currScore =0;
 	if(parsedArray[begin].length===1)
 	{
-        
-		console.log("1" , parsedArray[begin]);
 		currScore += 10;
 		currScore += parsedArray[begin+1][0];
 	}
