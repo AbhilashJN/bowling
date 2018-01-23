@@ -45,6 +45,17 @@ let myfuncs = require("./bowling");
 
 
 {
+	sampleInp14 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 4, 6, 10];
+	sampleParsed14 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[4,6,10]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp14)).toEqual(sampleParsed14);
+	});
+
+}
+
+
+
+{
 	sampleInp14 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 5, 5, 10];
 	sampleParsed14 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[5,5,10]];
 	test("For given input the score should be 90",  ()=>{
