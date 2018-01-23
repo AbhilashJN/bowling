@@ -90,10 +90,22 @@ let myfuncs = require("./bowling");
 
 
 {
+	sampleInp31 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,10,2,5];
+	sampleParsed31 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[10],[5,5]];
+
+	test("For given input the strike score should be 10" , ()=>{
+		expect(myfuncs.calcStrike(sampleParsed31,9)).toBe(10);
+	});
+}
+
+
+
+
+{
 	sampleInp5 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3,5, 1,2];
 	sampleParsed5 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,5],[1,2]];
 
-	test("For given input the strike score should be 13" , ()=>{
+	test("For given input the score should be 110" , ()=>{
 		expect(myfuncs.score(sampleInp5)).toBe(110);
 	});
 }
@@ -104,7 +116,7 @@ let myfuncs = require("./bowling");
 	sampleInp6 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3,5, 10,10,10];
 	sampleParsed6 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,5],[10,10,10]];
 
-	test("For given input the strike score should be 13" , ()=>{
+	test("For given input the score should be 137" , ()=>{
 		expect(myfuncs.score(sampleInp6)).toBe(137);
 	});
 }
@@ -115,7 +127,7 @@ let myfuncs = require("./bowling");
 	sampleInp7 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,10, 10,10,10];
 	sampleParsed7 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[10],[10,10,10]];
 
-	test("For given input the strike score should be 13" , ()=>{
+	test("For given input the score should be 171" , ()=>{
 		expect(myfuncs.score(sampleInp7)).toBe(171);
 	});
 }
@@ -126,7 +138,7 @@ let myfuncs = require("./bowling");
 	sampleInp8 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,5,5,10,2,0];
 	sampleParsed8 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[5,5],[10,2,0]];
 
-	test("For given input the strike score should be 13" , ()=>{
+	test("For given input the score should be 133" , ()=>{
 		expect(myfuncs.score(sampleInp8)).toBe(133);
 	});
 }
