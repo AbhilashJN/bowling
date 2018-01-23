@@ -1,47 +1,89 @@
 let myfuncs = require("./bowling");
 
-let sampleInp;
-let sampleParsed;
-let sampleBegin;
-let sampleBegin2;
 
+{
+	sampleInp = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+	sampleParsed = [[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp)).toEqual(sampleParsed);
+	});
 
-
-sampleInp = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-sampleParsed = [[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6],[3,6]];
-test("For given input the score should be 90",  ()=>{
-	expect(myfuncs.parseFrames(sampleInp)).toEqual(sampleParsed);
-});
-
-
-sampleInp = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 3, 6];
-sampleParsed = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[3,6]];
-test("For given input the score should be 90",  ()=>{
-	expect(myfuncs.parseFrames(sampleInp)).toEqual(sampleParsed);
-});
+}
 
 
 
 
 
+{
+	sampleInp1 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 3, 6];
+	sampleParsed1 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[3,6]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp1)).toEqual(sampleParsed1);
+	});
+
+}
 
 
-sampleInp = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 3, 6];
-sampleParsed = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[3,6]];
-sampleBegin = 1;
+{
+	sampleInp12 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 10, 3, 4];
+	sampleParsed12 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[10,3,4]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp12)).toEqual(sampleParsed12);
+	});
 
-test("For given input the strike score should be 19" , ()=>{
-	expect(myfuncs.calcStrike(sampleParsed,sampleBegin)).toBe(9);
-});
+}
+
+
+{
+	sampleInp13 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 10, 10, 10];
+	sampleParsed13 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[10,10,10]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp13)).toEqual(sampleParsed13);
+	});
+
+}
+
+
+{
+	sampleInp14 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 5, 5, 10];
+	sampleParsed14 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[5,5,10]];
+	test("For given input the score should be 90",  ()=>{
+		expect(myfuncs.parseFrames(sampleInp14)).toEqual(sampleParsed14);
+	});
+
+}
 
 
 
 
-sampleInp = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 2, 5, 3, 6];
-sampleParsed = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[2,5],[3,6]];
-sampleBegin2 = 8;
+{
+	sampleInp2 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3, 6, 3, 6];
+	sampleParsed2 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,6],[3,6]];
+	sampleBegin = 1;
 
-test("For given input the strike score should be 19" , ()=>{
-	expect(myfuncs.calcStrike(sampleParsed,sampleBegin2)).toBe(7);
-});
+	test("For given input the strike score should be 9" , ()=>{
+		expect(myfuncs.calcStrike(sampleParsed2,1)).toBe(9);
+	});
+}
+
+
+{
+	sampleInp3 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 2, 5, 3, 6];
+	sampleParsed3 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[2,5],[3,6]];
+	sampleBegin2 = 8;
+
+	test("For given input the strike score should be 7" , ()=>{
+		expect(myfuncs.calcStrike(sampleParsed3,8)).toBe(7);
+	});
+}
+
+
+{
+	sampleParsed4 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[10],[3,6]];
+	sampleBegin4 = 8;
+
+	test("For given input the strike score should be 13" , ()=>{
+		expect(myfuncs.calcStrike(sampleParsed4,8)).toBe(13);
+	});
+}
 

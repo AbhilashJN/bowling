@@ -45,6 +45,8 @@ function score(frameArray)
 function parseFrames(frameArray)
 {
 	let modArray=[];
+	let frameCount=0;
+
 	for(let i=0;i<frameArray.length;i++)
 	{
 		if(frameArray[i]===10)   //is a strike i.e. 1 throw in frame
@@ -54,7 +56,13 @@ function parseFrames(frameArray)
 		else      //is not a strike i.e. 2 throws in frame
 		{
 			modArray.push([frameArray[i],frameArray[i+1]]);
-			i++;
+			i=i+1;
+		}
+		frameCount+=1;
+		if (frameCount===9)    //now add the last frame
+		{
+			modArray.push(frameArray.slice(i+1));
+			break;
 		}
 	}
 
