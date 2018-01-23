@@ -79,11 +79,33 @@ let myfuncs = require("./bowling");
 
 
 {
-	sampleParsed4 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[10],[3,6]];
-	sampleBegin4 = 8;
+	sampleInp5 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3,5, 1,2];
+	sampleParsed5 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,5],[1,2]];
 
 	test("For given input the strike score should be 13" , ()=>{
-		expect(myfuncs.calcStrike(sampleParsed4,8)).toBe(13);
+		expect(myfuncs.score(sampleInp5)).toBe(110);
+	});
+}
+
+
+
+{
+	sampleInp6 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10, 3,5, 10,10,10];
+	sampleParsed6 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[3,5],[10,10,10]];
+
+	test("For given input the strike score should be 13" , ()=>{
+		expect(myfuncs.score(sampleInp6)).toBe(137);
+	});
+}
+
+
+
+{
+	sampleInp7 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,10, 10,10,10];
+	sampleParsed7 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[10],[10,10,10]];
+
+	test("For given input the strike score should be 13" , ()=>{
+		expect(myfuncs.score(sampleInp7)).toBe(171);
 	});
 }
 

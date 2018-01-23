@@ -10,32 +10,42 @@ frames.
 */
 
 
-function score(frameArray)
+function calcScore(frameArray)
 {
 	let score = 0;
 	let modArray = parseFrames(frameArray);
-	
+	console.log(modArray);
 
 	for(let i=0;i<modArray.length;i++)
 	{
-		if(frameArray[i].length===1) // is a strike
+		console.log(i , modArray[i]);
+        
+		if(modArray[i].length===1) // is a strike
 		{
+			console.log("here1");
 			score+=10;
-			score+= calcStrike(frameArray,i+1);    //add next two scores
+			score+= calcStrike(modArray,i+1);    //add next two scores
 			
 		}
-		else if (frameArray[i].length===2)
+		else if (modArray[i].length===2)
 		{
-			if(frameArray[i][0]+frameArray[i][1] === 10)   //is a spare
+			if(modArray[i][0]+modArray[i][1] === 10)   //is a spare
 			{
 				score+=10;
-				score+=frameArray[i+1][0];
+				score+=modArray[i+1][0];
+			}
+			else{
+				console.log("here");
+				score += (modArray[i][0]+modArray[i][1]);   //is open
 			}
 		}
         
-		else{                                                    //is open
-			score += (frameArray[i][0]+frameArray[i][1]);
+		else if (modArray[i].length===3)
+		{      //last frame had 3 throws          
+                    
+			score += (modArray[i][0]+modArray[i][1]+modArray[i][2]);
 		}
+		console.log(score);
 	}
 
 	return score;
@@ -83,12 +93,13 @@ function calcStrike(parsedArray , begin)
 		currScore += 10;
 		currScore += parsedArray[begin+1][0];
 	}
-	else if(parsedArray[begin].length===2)
+	else if(parsedArray[begin].length>1)
 	{
 		currScore += parsedArray[begin][0];
 		currScore += parsedArray[begin][1];
         
 	}
+
     
 	return currScore;
 }
@@ -97,5 +108,5 @@ function calcStrike(parsedArray , begin)
 module.exports = { 
 	parseFrames: parseFrames,
 	calcStrike: calcStrike,
-	score: score
+	score: calcScore
 };
