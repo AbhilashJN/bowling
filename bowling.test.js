@@ -109,3 +109,13 @@ let myfuncs = require("./bowling");
 	});
 }
 
+
+
+{
+	sampleInp8 = [10, 3, 6, 2, 8, 3, 6, 3, 7, 3, 6, 3, 6, 10,5,5,10,2,0];
+	sampleParsed8 = [[10],[3,6],[2,8],[3,6],[3,7],[3,6],[3,6],[10],[5,5],[10,2,0]];
+
+	test("For given input the strike score should be 13" , ()=>{
+		expect(myfuncs.score(sampleInp8)).toBe(133);
+	});
+}
