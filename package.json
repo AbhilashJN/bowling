@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "bowling.js",
-  "dependencies": {},
+  "dependencies": {
+    "eslint": "^4.16.0"
+  },
   "devDependencies": {
     "jest": "^22.1.4"
   },
